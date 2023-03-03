@@ -1,3 +1,10 @@
 <template>
-    <h1 class="">Hello world</h1>
+  <welcome />
 </template>
+
+<script setup>
+import { useHead } from '#imports';
+useHead({
+    title: "Ben Varian"
+})
+</script>

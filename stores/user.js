@@ -13,6 +13,7 @@ export const useUserStore = defineStore("user", {
         .then((response) => response.json())
         .then((data) => {
           data.forEach(async (element) => {
+            // console.log(element);
             // const url = element.contents_url.replace(
             //   /\/{\+path}/,
             //   "/README.md"
@@ -22,10 +23,16 @@ export const useUserStore = defineStore("user", {
             //   .then((data) => {
             //     return decodeURIComponent(atob(data.content));
             //   });
+            const languages = await fetch(element.languages_url)
+              .then((response) => response.json())
+              .then((data) => {
+                return data
+              });
             const data = {
               id: element.id,
               name: element.name,
               url: element.html_url,
+              languages: languages,
               // readme: readMe.slice(0,50),
             };
             this.repos.push(data);

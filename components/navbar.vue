@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-0 w-full bg-gray-200 flex flex-row justify-between">
+  <div class="sticky top-0 w-full bg-gray-200 flex flex-row justify-between py-2">
     <div class="place-items-center px-4">
       <NuxtLink to="/">
         <p>B</p>

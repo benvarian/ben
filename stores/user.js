@@ -13,21 +13,20 @@ export const useUserStore = defineStore("user", {
         .then((response) => response.json())
         .then((data) => {
           data.forEach(async (element) => {
-            const url = element.contents_url.replace(
-              /\/{\+path}/,
-              "/README.md"
-            );
-            console.log(url);
-            const readMe = await fetch(url)
-              .then((response) => response.json())
-              .then((data) => {
-                return decodeURIComponent(atob(data.content));
-              });
+            // const url = element.contents_url.replace(
+            //   /\/{\+path}/,
+            //   "/README.md"
+            // );
+            // const readMe = await fetch(url)
+            //   .then((response) => response.json())
+            //   .then((data) => {
+            //     return decodeURIComponent(atob(data.content));
+            //   });
             const data = {
               id: element.id,
               name: element.name,
               url: element.html_url,
-              readme: readMe,
+              // readme: readMe.slice(0,50),
             };
             this.repos.push(data);
           });

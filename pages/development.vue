@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <repo :data="store.repos" />
+  <div class="flex justify-center py-10">
+    <div class="grid gap-4">
+      <repo :data="store.repos" />
+    </div>
   </div>
 </template>
 

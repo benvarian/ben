@@ -1,5 +1,7 @@
 <template>
-  <div class="sticky top-0 w-full bg-white flex flex-row justify-between py-6 px-20">
+  <div
+    class="sticky top-0 w-full bg-white flex flex-row justify-between py-6 px-20"
+  >
     <div class="place-items-center px-4">
       <NuxtLink to="/">
         <p class="font-mono font-light">BEN VARIAN</p>
@@ -13,7 +15,7 @@
       </div>
     </div>
   </div>
-  <hr class="bg-gray-50 mx-24 pb-0.5"/>
+  <hr class="bg-gray-50 mx-24 pb-0.5" />
 </template>
 
 <script setup>

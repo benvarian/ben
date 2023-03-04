@@ -8,4 +8,18 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { onMounted } from "vue";
+import { useReposStore } from "~~/stores/repos";
+const store = useReposStore();
+onMounted(async () => {
+  try {
+    store.repos = [];
+    store.repo = null;
+    await store.getRepo("codersforcauses/wadl");
+    await store.getRepos();
+  } catch (error) {
+    console.log(error);
+  }
+});
+</script>

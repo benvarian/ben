@@ -2,10 +2,7 @@ import { defineStore } from "pinia";
 import { useNuxtApp } from "#imports";
 import { addDoc, collection } from "firebase/firestore";
 
-export const useContactStore = defineStore("repos", {
-  state() {
-    return {};
-  },
+export const useContactStore = defineStore("contact", {
   actions: {
     async addContact(form) {
       const { $clientFirestore } = useNuxtApp();

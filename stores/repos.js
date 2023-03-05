@@ -40,9 +40,9 @@ export const useReposStore = defineStore("repos", {
           });
         });
     },
-    async getRepo(repo) {
+    async getRepo() {
       const base = "https://api.github.com/repos/";
-      const url = base + repo;
+      const url = base + "codersforcauses/wadl";
       const info = await fetch(url)
         .then((response) => response.json())
         .then((data) => {

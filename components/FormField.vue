@@ -1,14 +1,14 @@
 <template>
-  <label class="font-mono text-sm">{{ label }}</label>
+  <label class="font-mono text-lg pb-2">{{ label }}</label>
   <input
     :type="type"
     :placeholder="placeholder"
     :required="required"
     :class="`
-        p-1
+        p-3
         pl-2.5
         mb-2.5
-        border border-solid focus:border-black
+        border border-solid bg-gray-100
         rounded-sm
         w-full
         font-mono
@@ -29,4 +29,10 @@ const props = defineProps({
   disabled: { type: Boolean, default: false },
   required: { type: Boolean, default: true },
 });
+const emit = defineEmits(["update:modelValue", "update"]);
+
+const updateInput = (e) => {
+  emit("update:modelValue", e.target.value);
+  emit("update");
+};
 </script>

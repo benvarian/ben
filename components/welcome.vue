@@ -1,9 +1,9 @@
 <template>
-  <div class="flex items-center justify-center h-screen">
+  <div class="flex items-center justify-center h-[calc(100vh-72px)]">
     <div class="">
-      <p class="font-mono text-sm">CYBER SECURITY STUDENT</p>
-      <p class="font-mono text-4xl">BEN VARIAN</p>
-      <p class="font-mono text-sm">COMPUTER SCIENCE & CYBER SECURITY @ UWA</p>
+      <p class="font-medium text-lg py-1">CYBER SECURITY STUDENT</p>
+      <p class="font-medium text-6xl py-1">BEN VARIAN</p>
+      <p class="font-medium text-lg py-1">COMPUTER SCIENCE & CYBER SECURITY @ UWA</p>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ onMounted(async () => {
   try {
     store.repos = [];
     store.repo = null;
-    await store.getRepo("codersforcauses/wadl");
+    await store.getRepo();
     await store.getRepos();
   } catch (error) {
     console.log(error);

@@ -29,15 +29,19 @@
             textColor="text-white"
           />
         </div>
+        <div v-if="successMessage">
+          <p class="py-10 text-xl">{{ successMessage }}</p>
+        </div>
       </div>
     </form>
   </section>
 </template>
 
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import { useContactStore } from "~~/stores/contact";
 const store = useContactStore();
+const successMessage = ref(null);
 const form = reactive({
   name: "",
   email: "",
@@ -49,5 +53,7 @@ const submitForm = async () => {
   } catch (error) {
     console.log(error);
   }
+  successMessage.value =
+    "Thanks for reaching out, please allow 1-3 days for a response.";
 };
 </script>
